@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     col.classList.add('col-6', 'col-md-4', 'col-lg-3', 'text-center');
 
     const img = document.createElement('img');
-    img.src = `img/pintura${i}.jpg`;
+    img.src = `img/pintura${i}.JPG`;
     img.alt = `Pintura ${i}`;
     img.classList.add('img-fluid', 'rounded', 'shadow-sm', 'gallery-img');
     img.setAttribute('data-bs-toggle', 'modal');
