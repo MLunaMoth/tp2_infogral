@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryContainer = document.getElementById('gallery-container');
   const modalImage = document.getElementById('modalImage');
 
-  for (let i = 1; i <= 45; i++) {
+  for (let i = 1; i <= 47; i++) {
     const col = document.createElement('div');
     col.classList.add('col-6', 'col-md-4', 'col-lg-3', 'text-center');
 
