@@ -1,0 +1,121 @@
+/* === General === */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  font-family: 'Special Elite', monospace;
+  color: #212529;
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/textura_fondo.jpg"); /* ruta de la imagen */
+  background-repeat: repeat;       /* se repite en ambas direcciones */
+  background-attachment: fixed;    /* se queda fijo al hacer scroll */
+  background-size: auto;           /* usa el tamaño original del patrón */
+}
+
+/* === Sidebar desplegable === */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60px;
+  background-color: #270310; /* negro Bootstrap */
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  z-index: 1050; /* más alto que Bootstrap containers */
+}
+
+.sidebar:hover {
+  width: 180px;
+}
+
+/* === Links del menú === */
+.sidebar .nav-link {
+  color: white;
+  padding: 15px 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #502c03;
+}
+
+/* === Texto que aparece al pasar el mouse === */
+.sidebar .link-text {
+  opacity: 0;
+  margin-left: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .link-text {
+  opacity: 1;
+}
+
+/* === Ajuste del contenido principal === */
+main {
+  margin-left: 60px; /* espacio igual al ancho cerrado del sidebar */
+  transition: margin-left 0.3s;
+}
+
+/* === Imagen del artista === */
+.foto-artista {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+header {
+  background-color: #310314;
+  color: rgba(255, 255, 255, 0.663);
+  margin-left: 60px; /* espacio para el sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar:hover ~ header {
+  margin-left: 180px;
+}
+
+.sidebar:hover ~ main {
+  margin-left: 180px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: #270310ce; 
+  }
+
+  /* Mostrar texto del menú */
+  .sidebar .link-text {
+    opacity: 1;
+  }
+
+  .sidebar:hover {
+    width: 100%;
+  }
+
+  .sidebar:hover ~ main,
+  .sidebar:hover ~ header {
+    margin-left: 0 ;
+  }
+
+  main, header {
+    margin-left: 0 ;
+    transition: none ;
+  }
+  
+}
+
+
+
