@@ -3,15 +3,21 @@ h1, h2, h3 {
 }
 
 body {
-  font-family: 'Special Elite', monospace;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Lora', serif;
   color: #212529;
   margin: 0;
   padding: 0;
-  background-image: url("../img/textura_fondo.jpg"); /* ruta de la imagen */
+  background-image: url("../img/textura_fondo.jpg"); 
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: auto;
 }
+
+.nav-link, h4, h5 {
+  font-family: 'Special Elite', monospace;
+}
+
 
 /*Sidebar desplegable */
 .sidebar {
@@ -48,7 +54,7 @@ body {
 .sidebar .link-text {
   opacity: 0;
   margin-left: 0.625rem; /* 10px / 16 */
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 
 .sidebar:hover .link-text {
@@ -61,6 +67,10 @@ main {
   transition: margin-left 0.3s;
 }
 
+.bg-beige {
+  background-color: rgba(249, 244, 226, 0.65);
+}
+
 .foto-artista {
   width: 6.25rem;  /* 100px / 16 */
   height: 6.25rem; /* 100px / 16 */
@@ -70,12 +80,16 @@ main {
 
 header {
   background-color: #310314;
+  background-image: url('../img/textura_fondo-heder.jpg'); /* tu imagen de textura */
+  background-size: cover;       /* ajusta la imagen para cubrir todo el header */
+  background-position: center;
   color: rgba(255, 255, 255, 0.663);
   margin-left: 3.75rem; /* 60px / 16 */
   transition: margin-left 0.3s ease;
+   position: relative;   
 }
 
-header.header-bordo h1 {
+header h1 {
   margin-left: 1rem;
 }
 
@@ -117,25 +131,7 @@ header.header-bordo h1 {
   font-size: 1.3rem;
   margin-right: 0.5rem; /* 8px / 16 */
   color: #b28c77;
-  transition: color 0.3s;
-}
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 60px;
-  background-color: #270310;
-  overflow-x: hidden;
-  transition: width 0.3s ease;
-  z-index: 1050;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar ul {
-  flex: 1 1 auto; /* Ocupa todo el espacio disponible */
 }
 
 .sidebar-gato {
@@ -149,8 +145,38 @@ header.header-bordo h1 {
   opacity: 0;         
 }
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 3.75rem;
+  background-color: #270310;
+  overflow: visible; /* 🔹 permite que el gato crezca sin cortarse */
+  transition: width 0.3s ease;
+  z-index: 1050;
+}
+
+.sidebar .sidebar-gato {
+  position: absolute;
+  bottom: 0; 
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  transform-origin: center bottom; 
+  max-width: 70%;
+  height: auto;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
 .sidebar:hover .sidebar-gato {
-  opacity: 1;          
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar .sidebar-gato:hover {
+  transform: translateX(-50%) scale(1.2); 
 }
 
 @media (max-width: 48rem) { /* 768px / 16 */
