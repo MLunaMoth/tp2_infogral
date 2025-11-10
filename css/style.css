@@ -50,18 +50,17 @@ body {
   background-color: #502c03;
 }
 
-/* Texto que aparece al pasar el mouse */
+
 .sidebar .link-text {
   opacity: 0;
   margin-left: 0.625rem; /* 10px / 16 */
-  transition: opacity 0.4s ease;
+  transition: opacity 0.1s ease;
 }
 
 .sidebar:hover .link-text {
   opacity: 1;
 }
 
-/* Ajuste del contenido principal */
 main {
   margin-left: 3.75rem; /* 60px / 16 */
   transition: margin-left 0.3s;
@@ -80,8 +79,8 @@ main {
 
 header {
   background-color: #310314;
-  background-image: url('../img/textura_fondo-heder.jpg'); /* tu imagen de textura */
-  background-size: cover;       /* ajusta la imagen para cubrir todo el header */
+  background-image: url('../img/textura_fondo-heder.jpg'); 
+  background-size: cover;      
   background-position: center;
   color: rgba(255, 255, 255, 0.663);
   margin-left: 3.75rem; /* 60px / 16 */
